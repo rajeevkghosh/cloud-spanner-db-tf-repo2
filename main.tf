@@ -29,6 +29,7 @@ resource "google_spanner_instance" "example2" {
 resource "google_spanner_database" "database" {
   instance = google_spanner_instance.example2.name
   name     = "us_dev_abcd_fghi_spdbase1"
+  project      = "airline1-sabre-wolverine"
   ddl = [
     "CREATE TABLE t1 (t1 INT64 NOT NULL,) PRIMARY KEY(t1)",
     "CREATE TABLE t2 (t2 INT64 NOT NULL,) PRIMARY KEY(t2)",
