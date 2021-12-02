@@ -6,7 +6,8 @@ access_token = var.access_token
 
 resource "google_spanner_instance" "example2" {
   config       = "nam3"
-  display_name = "dev_abcd_fghi_spanner1"
+  display_name = "cloud spanner instance-1"
+  name = "us-dev-abcd-fghi-spanner3-instance"
   project      = "airline1-sabre-wolverine"
   num_nodes    = 2
   
@@ -28,7 +29,7 @@ resource "google_spanner_instance" "example2" {
 
 resource "google_spanner_database" "database" {
   instance = google_spanner_instance.example2.name
-  name     = "us_dev_abcd_fghi_spdbase1"
+  name     = "us-dev-abcd-fghi-spanner3-db"
   project      = "airline1-sabre-wolverine"
   ddl = [
     "CREATE TABLE t1 (t1 INT64 NOT NULL,) PRIMARY KEY(t1)",
